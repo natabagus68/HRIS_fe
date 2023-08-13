@@ -10,10 +10,9 @@ const Root = {
 
 const routes = [
   {
-    path: "/",
+    path: "",
     name: "login-view",
     component: Login,
-    // children: [{ path: "login", component: Login }],
   },
 ];
 

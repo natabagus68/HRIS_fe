@@ -105,7 +105,7 @@ export const useLogin = () => {
   };
 
   return {
-    form: form.value,
+    form,
     handleChange,
   };
 };
@@ -131,7 +131,7 @@ const model = useLogin();
   />
 </div>
 
-{{ model.form.email }}
+{{ model.form.value.email }}
 </template>
 
 ```

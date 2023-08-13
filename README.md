@@ -39,13 +39,23 @@ root
 |
 + src
 |   + app
-|   |   - router.jsx
+|   |   - router.ts
 |   |
 |   + assets
 |   |
 |   + common
 |   |   + component
 |   |   + utils
+|   |
+|   + data
+|   |   + types
+|   |   - _api.ts
+|   |
+|   + domain
+|   |   + model
+|   |     - _Entity.ts
+|   |   + repository
+|   |     - _repository.ts
 |   |
 |   + features
 |   - main.ts

@@ -14,5 +14,5 @@ const model = useLogin();
     />
   </div>
 
-  {{ model.form.value.email }}
+  {{ model.form.email }}
 </template>

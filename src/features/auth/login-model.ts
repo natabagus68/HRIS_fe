@@ -21,7 +21,7 @@ export const useLogin = () => {
   };
 
   return {
-    form,
+    form: form.value,
     handleChange,
   };
 };

@@ -68,3 +68,70 @@ root
 - tailwind.config.js
 - vite.config.ts
 ```
+
+## Example Component Structure
+
+```
+auth
+| - login-model.ts
+| - Login.vue
+```
+
+## Example Implementation Component
+
+### login-model.ts
+
+```javascript
+import { ref } from "vue";
+import { Login } from "../../domain/model/login";
+
+export const useLogin = () => {
+  const form = ref<Login>(
+    Login.create({
+      email: "",
+      password: "",
+    })
+  );
+
+  const handleChange = (e: Event) => {
+    const event = <HTMLInputElement>e.target;
+    // duplication
+    const newForm = Login.create({
+      ...form.value.unmarshall(),
+      [event.name]: event.value,
+    });
+    // set new Object
+    form.value = newForm;
+  };
+
+  return {
+    form: form.value,
+    handleChange,
+  };
+};
+
+```
+
+### Login.vue
+
+```javascript
+<script setup lang="ts">
+import { useLogin } from "./login-model";
+const model = useLogin();
+</script>
+
+<template>
+<div>
+  <p>Login</p>
+  <input
+    @input="model.handleChange"
+    type="text"
+    name="email"
+    class="w-32 py-2 px-4 border border-gray-400 rounded-md outline-none"
+  />
+</div>
+
+{{ model.form.email }}
+</template>
+
+```

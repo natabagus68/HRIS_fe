@@ -1,5 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Login from "../features/auth/Login.vue";
+
+// admin
+import LayoutAdmin from "../features/admin/admin-layout/Layout.vue";
+import Dashboard from "../features/admin/dasboard/Dasboard.vue";
 const Root = {
   template: `
     <div>
@@ -13,6 +17,19 @@ const routes = [
     path: "",
     name: "login-view",
     component: Login,
+  },
+
+  {
+    path: "/admin",
+    name: "layout admin",
+    component: LayoutAdmin,
+    children: [
+      {
+        path: "",
+        name: "dashboard",
+        component: Dashboard,
+      },
+    ],
   },
 ];
 

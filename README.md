@@ -6,6 +6,7 @@ This is Vue.ts admin template
 
 - Vite.ts + vue.ts
 - Vue Router v4
+- Pinia
 - TailwindCss
 - Axios
 - UID
@@ -39,6 +40,7 @@ root
 |
 + src
 |   + app
+|   |   + services
 |   |   - router.ts
 |   |
 |   + assets

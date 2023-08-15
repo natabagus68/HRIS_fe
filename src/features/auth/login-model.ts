@@ -1,4 +1,4 @@
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { User } from "../../domain/model/user";
 import { AuthRepository } from "../../domain/repository/auth-repository";
 import { AuthApiRepository } from "../../data/auth-api-repository";
@@ -33,12 +33,27 @@ export const useLogin = () => {
     try {
       const auth = await authRepo.Login(JSON.parse(JSON.stringify(form.value)));
       await localStorage.setItem("token", auth.token);
-      router.push("/");
+      router.push("/admin");
     } catch (error) {
       errors.value = true;
       loading.value = false;
     }
   };
+
+  const isMe = async () => {
+    loading.value = true;
+    try {
+      await authRepo.me();
+      router.push("/admin");
+    } catch (error) {
+      loading.value = false;
+    }
+  };
+
+  onMounted(() => {
+    isMe();
+  });
+
   return {
     form,
     loading,

@@ -4,10 +4,11 @@ This is Vue.ts admin template
 
 ## Library use
 
-- Vite.ts + vue.ts
+- Vite.ts + vue 3
 - Vue Router v4
 - Pinia
 - TailwindCss
+- Flowbite vue 3
 - Axios
 - UID
 

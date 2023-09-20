@@ -25,7 +25,7 @@ const routes = [
     component: LayoutAdmin,
     children: [
       {
-        path: "",
+        path: "dashboard",
         name: "dashboard",
         component: Dashboard,
       },

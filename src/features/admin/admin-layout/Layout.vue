@@ -1,4 +1,5 @@
+<script setup></script>
 <template>
-  Layout
+  layout
   <RouterView></RouterView>
 </template>

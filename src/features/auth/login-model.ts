@@ -7,6 +7,8 @@ import { useRouter } from "vue-router";
 export const useLogin = () => {
   const router = useRouter();
   const authRepo: AuthRepository = new AuthApiRepository();
+  const passwordShow = ref<boolean>(false);
+
   const loading = ref<boolean>(false);
   const errors = ref<boolean>(false);
   const form = ref<User>(
@@ -50,6 +52,10 @@ export const useLogin = () => {
     }
   };
 
+  const passwordEvent = () => {
+    passwordShow.value = !passwordShow.value;
+  };
+
   onMounted(() => {
     isMe();
   });
@@ -58,7 +64,9 @@ export const useLogin = () => {
     form,
     loading,
     errors,
+    passwordShow,
     handleChange,
     handleSubmit,
+    passwordEvent,
   };
 };

@@ -1,12 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Vue + TS</title>
+    <style>
+      /* Menonaktifkan seleksi teks di luar elemen dengan class "no-select" */
+      body:not(.no-select) {
+        user-select: auto;
+      }
+
+      /* Mengaktifkan seleksi teks di elemen dengan class "no-select" */
+      .no-select {
+        user-select: none;
+      }
+    </style>
+    <title>HRIS New Era</title>
   </head>
-  <body>
+  <body class="no-select">
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>

@@ -1,35 +1,56 @@
 <script setup lang="ts">
-import { TheCard } from "flowbite-vue";
+import { TheCard, Input, Button } from "flowbite-vue";
 import { useLogin } from "./login-model";
+import EyeIcon from "../../common/components/icons/EyeIcon.vue";
+import EyeCloseIcon from "../../common/components/icons/EyeCloseIcon.vue";
 const model = useLogin();
 </script>
 
 <template>
-  <div>
-    <the-card
-      href="#"
-      variant="horizontal"
-      img-src="https://flowbite.com/docs/images/blog/image-4.jpg"
-      img-alt="Desk"
-    >
+  <div class="w-screen h-screen absolute flex justify-center items-center">
+    <the-card class="hover:bg-white w-1/2">
       <h5
-        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+        class="mb-2 text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white"
       >
-        Noteworthy technology acquisitions 2021
+        Sign in
       </h5>
-      <p class="font-normal text-gray-700 dark:text-gray-400">
-        Here are the biggest enterprise technology acquisitions of 2021 so far,
-        in reverse chronological order.
-      </p>
-    </the-card>
-    <p>Login</p>
-    <input
-      @input="model.handleChange"
-      type="text"
-      name="email"
-      class="w-32 py-2 px-4 border border-gray-400 rounded-md outline-none"
-    />
-  </div>
+      <div class="mt-5 flex flex-col gap-5 justify-center outline-none">
+        <Input
+          :style="{
+            color: 'rgb(75, 85, 99)',
+          }"
+          placeholder="Email"
+          label="Email"
+          type="email"
+          name="email"
+          :value="model.form.value.email"
+          :onchange="model.handleChange"
+        />
+        <div class="relative">
+          <button
+            class="cursor-pointer block p-2 absolute z-10 top-8 right-2"
+            @click="model.passwordEvent"
+          >
+            <div v-if="model.passwordShow.value === false">
+              <EyeCloseIcon :size="20" :class="'text-gray-600'" />
+            </div>
+            <div v-if="model.passwordShow.value === true">
+              <EyeIcon :size="20" :class="'text-gray-600'" />
+            </div>
+          </button>
 
-  {{ model.form.value.email }}
+          <Input
+            :style="{ color: 'rgb(75, 85, 99)' }"
+            name="password"
+            :value="model.form.value.password"
+            :onchange="model.handleChange"
+            placeholder="password"
+            label="Password"
+            :type="model.passwordShow.value === false ? 'password' : 'text'"
+          />
+        </div>
+        <Button class="bg-sky-500 hover:bg-sky-700">Sign in</Button>
+      </div>
+    </the-card>
+  </div>
 </template>

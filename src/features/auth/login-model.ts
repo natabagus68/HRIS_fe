@@ -8,7 +8,6 @@ export const useLogin = () => {
   const router = useRouter();
   const authRepo: AuthRepository = new AuthApiRepository();
   const passwordShow = ref<boolean>(false);
-
   const loading = ref<boolean>(false);
   const errors = ref<boolean>(false);
   const form = ref<User>(

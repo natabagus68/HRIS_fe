@@ -5,7 +5,7 @@ import { api } from "./_api";
 
 export class AuthApiRepository implements AuthRepository {
   async Login(props: User): Promise<Auth> {
-    const { data } = await api.post("admin/login", {
+    const { data } = await api.post("login", {
       email: props.email,
       password: props.password,
     });
@@ -22,7 +22,7 @@ export class AuthApiRepository implements AuthRepository {
   }
 
   async me(): Promise<Auth> {
-    const { data } = await api.post("admin/me");
+    const { data } = await api.get("me");
     return Auth.create({
       token: data?.token,
       user: User.create({

@@ -24,7 +24,7 @@ const model = useLogin();
           alt="Logo Perusahaan"
           class="mx-auto mb-4 md:mx-0"
         />
-        <h2 class="text-2xl font-bold">Wellcome back</h2>
+        <h2 class="text-2xl font-bold">Welcome back</h2>
         <span class="text-gray-600">Silahkan masuk ke akun anda</span>
       </div>
       <div

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { TheCard, Input, Button } from "flowbite-vue";
+import { Input, Button } from "flowbite-vue";
 import { useLogin } from "./login-model";
 import EyeIcon from "../../common/components/icons/EyeIcon.vue";
 import EyeCloseIcon from "../../common/components/icons/EyeCloseIcon.vue";
@@ -7,18 +7,31 @@ const model = useLogin();
 </script>
 
 <template>
-  <div class="w-screen h-screen absolute flex justify-center items-center">
-    <the-card class="hover:bg-white w-1/2">
-      <h5
-        class="mb-2 text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white"
+  <div class="h-screen w-full flex md:flex-row">
+    <div class="hidden md:flex md:w-full h-full items-center justify-center">
+      <img
+        src="/login/santuy.png"
+        alt="Background Image"
+        class="w-[700px] h-[466.667px]"
+      />
+    </div>
+    <div
+      class="flex flex-col justify-center p-8 w-full md:w-1/2 h-full bg-white"
+    >
+      <div class="mb-8 text-center md:text-left">
+        <img
+          src="/logoql.png"
+          alt="Logo Perusahaan"
+          class="mx-auto mb-4 md:mx-0"
+        />
+        <h2 class="text-2xl font-bold">Wellcome back</h2>
+        <span class="text-gray-600">Silahkan masuk ke akun anda</span>
+      </div>
+      <div
+        class="flex flex-col gap-5 justify-center outline-none md:w-[400px] w-full"
       >
-        Sign in
-      </h5>
-      <div class="mt-5 flex flex-col gap-5 justify-center outline-none">
         <Input
-          :style="{
-            color: 'rgb(75, 85, 99)',
-          }"
+          :style="{ color: 'rgb(75, 85, 99)' }"
           placeholder="Email"
           label="Email"
           type="email"
@@ -38,7 +51,6 @@ const model = useLogin();
               <EyeIcon :size="20" :class="'text-gray-600'" />
             </div>
           </button>
-
           <Input
             :style="{ color: 'rgb(75, 85, 99)' }"
             name="password"
@@ -49,8 +61,10 @@ const model = useLogin();
             :type="model.passwordShow.value === false ? 'password' : 'text'"
           />
         </div>
-        <Button class="bg-sky-500 hover:bg-sky-700">Sign in</Button>
+        <Button class="bg-sky-500 hover:bg-sky-700 duration-300 w-full"
+          >Masuk</Button
+        >
       </div>
-    </the-card>
+    </div>
   </div>
 </template>

@@ -3,12 +3,19 @@ import Navitem from "../../../common/components/Navitem.vue";
 import NavDropDown from "../../../common/components/NavDropDown.vue";
 import Bar3 from "../../../common/components/icons/Bar3.vue";
 import EmailIcon from "../../../common/components/icons/EmailIcon.vue";
+import Loader from "../../../common/components/Loader.vue";
 import { Avatar } from "flowbite-vue";
 import { useLayout } from "./layout-model";
 const model = useLayout();
 </script>
 <template>
-  <main class="w-full h-screen flex">
+  <div
+    v-if="model.loading.value === true"
+    class="absolute w-screen h-screen bg-white flex items-center justify-center"
+  >
+    <Loader />
+  </div>
+  <main v-else class="w-full h-screen flex">
     <!-- side bar -->
     <div
       class="w-[250px] h-screen bg-[#091943] duration-700"

@@ -42,8 +42,8 @@ export const useLogin = () => {
   };
 
   const isMe = async () => {
-    loading.value = true;
     try {
+      loading.value = true;
       await authRepo.me();
       router.push("/admin");
     } catch (error) {

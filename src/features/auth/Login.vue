@@ -3,11 +3,18 @@ import { Input, Button } from "flowbite-vue";
 import { useLogin } from "./login-model";
 import EyeIcon from "../../common/components/icons/EyeIcon.vue";
 import EyeCloseIcon from "../../common/components/icons/EyeCloseIcon.vue";
+import Loader from "../../common/components/Loader.vue";
 const model = useLogin();
 </script>
 
 <template>
-  <div class="h-screen w-full flex md:flex-row">
+  <div
+    v-if="model.loading.value === true"
+    class="absolute w-screen h-screen bg-white flex items-center justify-center"
+  >
+    <Loader />
+  </div>
+  <div v-else class="h-screen w-full flex md:flex-row">
     <div class="hidden md:flex md:w-full h-full items-center justify-center">
       <img
         src="/login/santuy.png"

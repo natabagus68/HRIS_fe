@@ -21,7 +21,7 @@ export const useLayout = () => {
     }
   };
   onMounted(() => {
-    isMe();
+    // isMe();
   });
   return {
     loading,

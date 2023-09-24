@@ -2,6 +2,7 @@
   "routes": [
     {
       "src": "/(.*)",
+      "des": "/index.html",
       "continue": true
     }
   ]

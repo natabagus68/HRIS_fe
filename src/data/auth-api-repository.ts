@@ -1,6 +1,8 @@
+import { config } from "../common/utils/config";
 import { Auth } from "../domain/model/auth";
 import { User } from "../domain/model/user";
 import { AuthRepository } from "../domain/repository/auth-repository";
+import { mockAxiosBaseQuery } from "../common/utils/mockAxios";
 import { api } from "./_api";
 
 export class AuthApiRepository implements AuthRepository {
@@ -22,7 +24,10 @@ export class AuthApiRepository implements AuthRepository {
   }
 
   async me(): Promise<Auth> {
-    const { data } = await api.get("me");
+    config.mockApi;
+    const { data } = config.mockApi
+      ? mockAxiosBaseQuery()
+      : await api.get("me");
     return Auth.create({
       token: data?.token,
       user: User.create({

@@ -1,17 +1,7 @@
 {
   "routes": [
     {
-      "src": "/admin/(.*)",
-      "dest": "/admin/index.html",
-      "continue": true
-    },
-    {
-      "src": "/admin/(.*)",
-      "dest": "/admin/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/index.html",
       "continue": true
     }
   ]

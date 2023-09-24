@@ -4,13 +4,13 @@ import Login from "../features/auth/Login.vue";
 // admin
 import LayoutAdmin from "../features/admin/admin-layout/Layout.vue";
 import Dashboard from "../features/admin/dasboard/Dasboard.vue";
-// const Root = {
-//   template: `
-//     <div>
-//       <router-view></router-view>
-//     </div>
-//   `,
-// };
+const Root = {
+  template: `
+    <div>
+      <router-view></router-view>
+    </div>
+  `,
+};
 
 const routes = [
   {

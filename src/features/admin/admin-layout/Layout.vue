@@ -15,12 +15,12 @@ const model = useLayout();
   >
     <Loader />
   </div>
-  <main v-else class="w-full h-screen flex">
+  <main v-else class="w-full flex">
     <!-- side bar -->
     <div
-      class="w-[250px] h-screen bg-[#091943] duration-700"
+      class="w-[250px] min-h-screen h-auto bg-[#091943] duration-700 pb-5"
       :class="
-        model.sideBarShow.value ? 'translate-x-0' : '-translate-x-96 hidden'
+        model.sideBarShow.value ? 'translate-x-0' : '-translate-x-96 hidden '
       "
     >
       <header class="flex items-center m-2.5 gap-3.5">

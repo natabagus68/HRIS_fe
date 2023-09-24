@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
 const props = defineProps({
   size: Number,
   class: String,

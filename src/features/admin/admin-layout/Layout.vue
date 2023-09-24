@@ -41,10 +41,17 @@ const model = useLayout();
       </section>
     </div>
     <!-- navbar -->
-    <div class="flex-1 h-[65px] shadow-md flex items-center pl-10 duration-700">
-      <div class="w-fit cursor-pointer" @click="model.handleSideBarShow()">
-        <Bar3 />
+    <div class="flex-1">
+      <div
+        class="w-full h-[65px] shadow-md flex items-center pl-10 duration-700"
+      >
+        <div class="w-fit cursor-pointer" @click="model.handleSideBarShow()">
+          <Bar3 />
+        </div>
       </div>
+      <main class="p-10">
+        <router-view></router-view>
+      </main>
     </div>
   </main>
 </template>

@@ -1,17 +1,17 @@
 {
   "routes": [
     {
-      "src": "/admin/(.*)", // Pola untuk URL yang sesuai dengan path "/admin"
-      "dest": "/admin/index.html", // Destinasi yang sesuai dengan entri utama Vue Anda
-      "continue": true // Gunakan "continue" untuk membiarkan routing Vue menghandle routing internal
+      "src": "/admin/(.*)",
+      "dest": "/admin/index.html",
+      "continue": true
     },
     {
-      "src": "/admin/(.*)", // Pola untuk asset atau file statis di dalam subpath "/admin"
-      "dest": "/admin/$1" // Destinasi untuk asset/file statis
+      "src": "/admin/(.*)",
+      "dest": "/admin/$1"
     },
     {
-      "src": "/(.*)", // Pola default untuk routing lainnya
-      "dest": "/index.html", // Destinasi ke entri utama Vue
+      "src": "/(.*)",
+      "dest": "/index.html",
       "continue": true
     }
   ]

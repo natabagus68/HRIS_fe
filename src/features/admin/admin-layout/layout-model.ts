@@ -11,18 +11,18 @@ export const useLayout = () => {
   const handleSideBarShow = () => {
     sideBarShow.value = !sideBarShow.value;
   };
-  const isMe = async () => {
-    try {
-      loading.value = true;
-      await authRep.me();
-      loading.value = false;
-    } catch (error) {
-      router.push("/");
-    }
-  };
-  onMounted(() => {
-    // isMe();
-  });
+  // const isMe = async () => {
+  //   try {
+  //     loading.value = true;
+  //     await authRep.me();
+  //     loading.value = false;
+  //   } catch (error) {
+  //     router.push("/");
+  //   }
+  // };
+  // onMounted(() => {
+  //   // isMe();
+  // });
   return {
     loading,
     sideBarShow,

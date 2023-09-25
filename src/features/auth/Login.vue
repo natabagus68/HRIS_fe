@@ -34,6 +34,9 @@ const model = useLogin();
         <h2 class="text-2xl font-bold">Welcome back</h2>
         <span class="text-gray-600">Silahkan masuk ke akun anda</span>
       </div>
+      <div v-if="model.errors.value" class="text-red-500 mb-2">
+        {{ model.errors.value }}
+      </div>
       <div
         class="flex flex-col gap-5 justify-center outline-none md:w-[400px] w-full"
       >
@@ -68,7 +71,9 @@ const model = useLogin();
             :type="model.passwordShow.value === false ? 'password' : 'text'"
           />
         </div>
-        <Button class="bg-sky-500 hover:bg-sky-700 duration-300 w-full"
+        <Button
+          @click="model.handleSubmit"
+          class="bg-sky-500 hover:bg-sky-700 duration-300 w-full"
           >Masuk</Button
         >
       </div>

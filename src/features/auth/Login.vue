@@ -35,6 +35,9 @@ const model = useLogin();
         <span class="text-gray-600">Silahkan masuk ke akun anda</span>
       </div>
       <form @submit="model.handleSubmit">
+        <div v-if="model.errors.value" class="text-red-500 mb-2">
+          {{ model.errors.value }}
+        </div>
         <div
           class="flex flex-col gap-5 justify-center outline-none md:w-[400px] w-full"
         >
@@ -73,6 +76,7 @@ const model = useLogin();
             type="submit"
             class="bg-sky-500 hover:bg-sky-700 duration-300 w-full"
             >Masuk</Button
+          >
           >
         </div>
       </form>

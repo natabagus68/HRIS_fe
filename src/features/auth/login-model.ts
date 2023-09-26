@@ -9,7 +9,7 @@ export const useLogin = () => {
   const authRepo: AuthRepository = new AuthApiRepository();
   const passwordShow = ref<boolean>(false);
   const loading = ref<boolean>(false);
-  const errors = ref<boolean>(false);
+  const errors = ref<string | null>(null);
   const form = ref<User>(
     User.create({
       email: "",
@@ -19,24 +19,29 @@ export const useLogin = () => {
 
   const handleChange = (e: Event) => {
     const event = <HTMLInputElement>e.target;
-    // duplication
     const newForm = User.create({
       ...form.value.unmarshall(),
       [event.name]: event.value,
     });
-    // set new Object
     form.value = newForm;
   };
 
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
+
+    if (!form.value.email || !form.value.password) {
+      errors.value = "Harap masukan email atau password !";
+      loading.value = false;
+      return;
+    }
+
     try {
       loading.value = true;
       const auth = await authRepo.Login(form.value.unmarshall());
       await localStorage.setItem("token", auth.token);
       router.push("/admin");
     } catch (error) {
-      errors.value = true;
+      errors.value = "Password atau Email salah";
       loading.value = false;
     }
   };

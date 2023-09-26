@@ -21,6 +21,7 @@ export class User extends Entity<IUser> {
       name: this.name,
       role: this.role,
       active: this.active,
+      password: this.password,
     };
   }
 

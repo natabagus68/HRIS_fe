@@ -30,9 +30,9 @@ export const useLogin = () => {
 
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
-    loading.value = true;
     try {
-      const auth = await authRepo.Login(JSON.parse(JSON.stringify(form.value)));
+      loading.value = true;
+      const auth = await authRepo.Login(form.value.unmarshall());
       await localStorage.setItem("token", auth.token);
       router.push("/admin");
     } catch (error) {

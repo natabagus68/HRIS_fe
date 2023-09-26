@@ -34,44 +34,48 @@ const model = useLogin();
         <h2 class="text-2xl font-bold">Welcome back</h2>
         <span class="text-gray-600">Silahkan masuk ke akun anda</span>
       </div>
-      <div
-        class="flex flex-col gap-5 justify-center outline-none md:w-[400px] w-full"
-      >
-        <Input
-          :style="{ color: 'rgb(75, 85, 99)' }"
-          placeholder="Email"
-          label="Email"
-          type="email"
-          name="email"
-          :value="model.form.value.email"
-          :onchange="model.handleChange"
-        />
-        <div class="relative">
-          <button
-            class="cursor-pointer block p-2 absolute z-10 top-8 right-2"
-            @click="model.passwordEvent"
-          >
-            <div v-if="model.passwordShow.value === false">
-              <EyeCloseIcon :size="20" :class="'text-gray-600'" />
-            </div>
-            <div v-if="model.passwordShow.value === true">
-              <EyeIcon :size="20" :class="'text-gray-600'" />
-            </div>
-          </button>
+      <form @submit="model.handleSubmit">
+        <div
+          class="flex flex-col gap-5 justify-center outline-none md:w-[400px] w-full"
+        >
           <Input
             :style="{ color: 'rgb(75, 85, 99)' }"
-            name="password"
-            :value="model.form.value.password"
+            placeholder="Email"
+            label="Email"
+            type="email"
+            name="email"
+            :value="model.form.value.email"
             :onchange="model.handleChange"
-            placeholder="password"
-            label="Password"
-            :type="model.passwordShow.value === false ? 'password' : 'text'"
           />
+          <div class="relative">
+            <button
+              class="cursor-pointer block p-2 absolute z-10 top-8 right-2"
+              @click="model.passwordEvent"
+            >
+              <div v-if="model.passwordShow.value === false">
+                <EyeCloseIcon :size="20" :class="'text-gray-600'" />
+              </div>
+              <div v-if="model.passwordShow.value === true">
+                <EyeIcon :size="20" :class="'text-gray-600'" />
+              </div>
+            </button>
+            <Input
+              :style="{ color: 'rgb(75, 85, 99)' }"
+              name="password"
+              :value="model.form.value.password"
+              :onchange="model.handleChange"
+              placeholder="password"
+              label="Password"
+              :type="model.passwordShow.value === false ? 'password' : 'text'"
+            />
+          </div>
+          <Button
+            type="submit"
+            class="bg-sky-500 hover:bg-sky-700 duration-300 w-full"
+            >Masuk</Button
+          >
         </div>
-        <Button class="bg-sky-500 hover:bg-sky-700 duration-300 w-full"
-          >Masuk</Button
-        >
-      </div>
+      </form>
     </div>
   </div>
 </template>

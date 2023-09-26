@@ -1,7 +1,6 @@
 import { Auth } from "../model/auth";
-import { User } from "../model/user";
-
+import { IUser } from "../model/user";
 export interface AuthRepository {
-  Login(props: User): Promise<Auth>;
+  Login(props: IUser): Promise<Auth>;
   me(): Promise<Auth>;
 }

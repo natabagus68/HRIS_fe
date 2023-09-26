@@ -1,12 +1,13 @@
 import { config } from "../common/utils/config";
 import { Auth } from "../domain/model/auth";
-import { User } from "../domain/model/user";
+import { IUser, User } from "../domain/model/user";
 import { AuthRepository } from "../domain/repository/auth-repository";
 import { mockAxiosBaseQuery } from "../common/utils/mockAxios";
 import { api } from "./_api";
 
 export class AuthApiRepository implements AuthRepository {
-  async Login(props: User): Promise<Auth> {
+  async Login(props: IUser): Promise<any> {
+    console.log(props);
     const { data } = await api.post("login", {
       email: props.email,
       password: props.password,
@@ -28,6 +29,8 @@ export class AuthApiRepository implements AuthRepository {
     const { data } = config.mockApi
       ? mockAxiosBaseQuery()
       : await api.get("me");
+
+    console.log(data);
     return Auth.create({
       token: data?.token,
       user: User.create({

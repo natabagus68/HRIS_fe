@@ -23,7 +23,7 @@ const active = ref(false);
         {{ name.toUpperCase() }}
       </h1>
       <div
-        class="duration-150"
+        class="duration-150 flex items-center justify-end flex-1 pr-4"
         :class="active == true ? '-rotate-90' : 'rotate-0'"
       >
         <ChevronRight />

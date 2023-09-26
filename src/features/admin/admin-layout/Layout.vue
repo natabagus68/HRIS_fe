@@ -45,6 +45,16 @@ const model = useLayout();
           <Navitem name="otoritas admin" to="#" />
           <Navitem name="otoritas mengakses" to="#" />
         </NavDropDown>
+        <NavDropDown name="transaksi">
+          <Navitem name="pengguna" to="#" />
+          <Navitem name="otoritas admin" to="#" />
+          <Navitem name="otoritas mengakses" to="#" />
+        </NavDropDown>
+        <NavDropDown name="report">
+          <Navitem name="pengguna" to="#" />
+          <Navitem name="otoritas admin" to="#" />
+          <Navitem name="otoritas mengakses" to="#" />
+        </NavDropDown>
       </section>
     </div>
     <!-- navbar -->

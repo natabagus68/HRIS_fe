@@ -4,6 +4,7 @@ export interface IPaginatedData<T> {
   limit: number;
   lastPage: number;
   totalRows: number;
+  filter?: string;
   data: T[];
 }
 
@@ -13,6 +14,7 @@ export class PaginatedData<T> {
   limit: number;
   lastPage: number;
   totalRows: number;
+  filter?: string;
   data: T[];
   constructor(props: IPaginatedData<T>) {
     this.q = props.q;
@@ -20,6 +22,7 @@ export class PaginatedData<T> {
     this.limit = props.limit;
     this.lastPage = props.lastPage;
     this.totalRows = props.totalRows;
+    this.filter = props.filter;
     this.data = props.data;
   }
   static create<T>(props: IPaginatedData<T>) {
@@ -44,6 +47,7 @@ export class PaginatedData<T> {
       limit: this.limit,
       lastPage: this.lastPage,
       totalRows: this.totalRows,
+      filter: this.filter,
       data: this.data,
     };
   }

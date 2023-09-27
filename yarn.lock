@@ -388,6 +388,16 @@
   dependencies:
     vue-demi "*"
 
+ag-grid-community@^30.2.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-community/-/ag-grid-community-30.2.0.tgz#b831fc99df1bfee6f73669fd8b7d3e9bd4012e22"
+  integrity sha512-Gd6GXmtzEQSCDloBdRxxCDqnjTBRAOf/zzlaxxyyVBJgc+cePuNgGdplRUhT/rwIiDwvyuoynvxelVE/iYdXsA==
+
+ag-grid-vue3@^30.2.0:
+  version "30.2.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-vue3/-/ag-grid-vue3-30.2.0.tgz#ee13d355fa049147fb85fb6f978a858a07767be6"
+  integrity sha512-tckZTjYAmjV0bnvGshpLmvWZO17sxsSSslJy8Rh8HMlRYJqTt8yuZKePi+uyZxHNeQYjDdOpF+OkISuyJlvGzA==
+
 any-promise@^1.0.0:
   version "1.3.0"
   resolved "https://registry.npmjs.org/any-promise/-/any-promise-1.3.0.tgz"
@@ -855,6 +865,11 @@ minimatch@^9.0.0:
   integrity sha512-RHiac9mvaRw0x3AYRgDC1CxAP7HTcNrrECeA8YYJeWnpo+2Q5CegtZjaotWTWxDG3UeGA1coE05iH1mPjT/2mg==
   dependencies:
     brace-expansion "^2.0.1"
+
+moment@^2.29.4:
+  version "2.29.4"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
+  integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
 
 muggle-string@^0.3.1:
   version "0.3.1"

@@ -11,9 +11,12 @@
   "dependencies": {
     "@vue-hero-icons/outline": "^1.7.2",
     "@vue-hero-icons/solid": "^1.7.2",
+    "ag-grid-community": "^30.2.0",
+    "ag-grid-vue3": "^30.2.0",
     "axios": "^1.4.0",
     "flowbite": "^1.8.1",
     "flowbite-vue": "^0.0.17-next.3",
+    "moment": "^2.29.4",
     "pinia": "^2.1.6",
     "uid": "^2.0.2",
     "vue": "^3.3.4",

@@ -4,6 +4,7 @@ import Login from "../features/auth/Login.vue";
 // admin
 import LayoutAdmin from "../features/admin/admin-layout/Layout.vue";
 import Dashboard from "../features/admin/dasboard/Dasboard.vue";
+import Devisi from "../features/admin/devisi/Devisi.vue";
 // const Root = {
 //   template: `
 //     <div>
@@ -25,9 +26,9 @@ const routes = [
     component: LayoutAdmin,
     children: [
       {
-        path: "dashboard",
-        name: "dashboard",
-        component: Dashboard,
+        path: "devisi",
+        name: "devisi",
+        component: Devisi,
       },
     ],
   },

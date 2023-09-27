@@ -6,6 +6,8 @@ import EmailIcon from "../../../common/components/icons/EmailIcon.vue";
 import Loader from "../../../common/components/Loader.vue";
 import { Avatar } from "flowbite-vue";
 import { useLayout } from "./layout-model";
+import moment from "moment";
+
 const model = useLayout();
 </script>
 <template>
@@ -18,12 +20,28 @@ const model = useLayout();
 
   <div v-else class="w-full flex flex-col">
     <!-- navbar -->
-    <div class="w-full h-[52px] shadow-md flex items-center pl-10 duration-700">
-      <div class="w-[230px] mr-5 pl-6">
-        <img src="/logoql.png" alt="logo ql" class="h-[49px] w-[52px]" />
+    <div
+      class="w-full h-[52px] flex justify-between items-center pl-10 shadow-md"
+    >
+      <div class="flex items-center gap-2">
+        <div class="w-[230px] mr-5 pl-6">
+          <img src="/logoql.png" alt="logo ql" class="h-[44px]" />
+        </div>
+        <div class="w-fit cursor-pointer" @click="model.handleSideBarShow()">
+          <Bar3 />
+        </div>
       </div>
-      <div class="w-fit cursor-pointer" @click="model.handleSideBarShow()">
-        <Bar3 />
+      <div class="w-[60%] h-full relative">
+        <div
+          class="absolute inset-0 z-[9999] flex items-center gap-5 justify-end pr-5"
+        >
+          <p class="text-white">
+            {{
+              moment(model.currentTime.value).format("DD MMMM YYYY HH:mm:ss")
+            }}
+          </p>
+        </div>
+        <img src="/bg-nav.png" alt="" class="absolute inset-0 h-full" />
       </div>
     </div>
     <!-- side bar -->
@@ -73,7 +91,10 @@ const model = useLayout();
       </div>
 
       <!-- main content -->
-      <main class="flex-1 p-10">
+      <main
+        class="flex-1 p-10 transform transition-transform duration-1000 ease-in-out"
+        :class="model.sideBarShow.value ? 'translate-x-0' : '-translate-x-32'"
+      >
         <router-view></router-view>
       </main>
     </div>

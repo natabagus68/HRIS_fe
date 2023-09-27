@@ -7,7 +7,6 @@ import { api } from "./_api";
 
 export class AuthApiRepository implements AuthRepository {
   async Login(props: IUser): Promise<any> {
-    console.log(props);
     const { data } = await api.post("login", {
       email: props.email,
       password: props.password,
@@ -30,7 +29,6 @@ export class AuthApiRepository implements AuthRepository {
       ? mockAxiosBaseQuery()
       : await api.get("me");
 
-    console.log(data);
     return Auth.create({
       token: data?.token,
       user: User.create({

@@ -1,4 +1,4 @@
-import { onMounted, ref } from "vue";
+import { onBeforeMount, onMounted, ref } from "vue";
 import { DivisiApiRepository } from "../../../data/devisi-api-repository";
 import { PaginatedData } from "../../../domain/model/paginated-data";
 import { Divisi } from "../../../domain/model/devisi";
@@ -29,7 +29,7 @@ export const useDevisi = () => {
     data.value = res;
   };
 
-  onMounted(() => {
+  onBeforeMount(() => {
     fetchData();
   });
 

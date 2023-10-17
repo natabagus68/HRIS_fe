@@ -41,7 +41,11 @@ const model = useLayout();
             }}
           </p>
         </div>
-        <img src="/bg-nav.png" alt="" class="absolute inset-0 h-full" />
+        <img
+          src="/bg-nav.png"
+          alt=""
+          class="absolute inset-0 h-full right-0 w-full"
+        />
       </div>
     </div>
     <!-- side bar -->
@@ -69,7 +73,7 @@ const model = useLayout();
             <EmailIcon />
           </Navitem>
           <NavDropDown name="master">
-            <Navitem name="divisi" to="#" />
+            <Navitem name="divisi" to="/admin/devisi" />
             <Navitem name="jobdesk" to="#" />
             <Navitem name="jabatan" to="#" />
             <Navitem name="departemen" to="#" />
